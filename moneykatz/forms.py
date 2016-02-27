@@ -20,4 +20,4 @@ class FileForm(forms.ModelForm):
 
     class Meta:
         model = File
-        exclude = ('category')
+        exclude = ('category',)
