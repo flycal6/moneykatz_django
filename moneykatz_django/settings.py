@@ -22,9 +22,10 @@ SECRET_KEY = '+rhky_p##2d++!gsea1d%yqw89!12@ignuu__-*_2f5sa1+n$x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -36,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'moneykatz',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,4 +82,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    STATIC_PATH,
+)
+
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+
+TEMPLATE_DIRS = (TEMPLATE_PATH,
+                 )
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

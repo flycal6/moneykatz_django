@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moneykatz</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    Hello World! <strong>{{ boldmessage }}</strong><br />
+    <a href="/moneykatz/about/">About this site</a><br />
+    <img src="{% static 'images/moneykatz-logo.svg' %}" alt="picture of a cat" />
+
+</body>
+</html>
