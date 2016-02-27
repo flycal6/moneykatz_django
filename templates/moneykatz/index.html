@@ -10,7 +10,32 @@
 <body>
     <h1>Welcome</h1>
     Hello World! <strong>{{ boldmessage }}</strong><br />
+
+    <h2>Categories</h2>
+
+    {% if categories %}
+        <ul>
+            {% for category in categories %}
+                <li><a href="/moneykatz/category/{{ category.slug }}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong>No categories present</strong>
+    {% endif %}
+
+    <h2>Most Viewed Files</h2>
+    {% if files %}
+        <ul>
+            {% for file in files %}
+                <li><a href="/media/{{ file.document }}">{{ file.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong>No files present</strong>
+    {% endif %}
+
     <a href="/moneykatz/about/">About this site</a><br />
+
     <img src="{% static 'images/moneykatz-logo.svg' %}" alt="picture of a cat" />
 
 </body>
