@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'moneykatz',
     'bootstrap3',
+    'bcrypt',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,10 +53,10 @@ MIDDLEWARE_CLASSES = (
 )
 
 PASSWORD_HASHERS = (
-    'django.contrib.auth.hashers.BCryptSHA256Passwordhasher',
-    'django.contrib.auth.hashers.BCryptPasswordhasher',
-    'django.contrib.auth.hashers.PBKDF2Passwordhasher',
-    'django.contrib.auth.hashers.PBKDFSHA1Passwordhasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 )
 
 
