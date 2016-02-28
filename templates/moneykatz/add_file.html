@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Moneykatz - Add a File</title>
-</head>
-<body>
-    <form id="file_form" method="post"  enctype="multipart/form-data" action="/moneykatz/category/{{ category.slug }}/add_file/">
+{% extends 'moneykatz/base.html' %}
+
+{% load staticfiles %}
+
+{% block body_block %}
+    <form id="file_form" method="post"  enctype="multipart/form-data" action="{% url 'category' category.slug %}add_file/">
 
         {% csrf_token %}
         {% for hidden in form.hidden_fields %}
@@ -19,5 +17,4 @@
         {% endfor %}
         <input type="submit" name="submit" value="Upload File" />
     </form>
-</body>
-</html>
+{% endblock %}

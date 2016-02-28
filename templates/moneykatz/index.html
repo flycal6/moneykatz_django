@@ -1,13 +1,8 @@
-<!DOCTYPE html>
+{% extends 'moneykatz/base.html' %}
 
 {% load staticfiles %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Moneykatz</title>
-</head>
-<body>
+{% block body_block %}
     {% if user.is_authenticated %}
     <h1>Welcome {{ user.username }}</h1>
     {% else %}
@@ -15,22 +10,20 @@
     {% endif %}
     Hello World! <strong>{{ boldmessage }}</strong><br />
 
-    <a href="/moneykatz/register/">Register Here</a><br />
-    <a href="/moneykatz/login/">Login</a><br />
 
     <h2>Categories</h2>
 
     {% if categories %}
         <ul>
             {% for category in categories %}
-                <li><a href="/moneykatz/category/{{ category.slug }}">{{ category.name }}</a></li>
+                <li><a href="{% url 'category' category.slug %}">{{ category.name }}</a></li>
             {% endfor %}
         </ul>
     {% else %}
         <strong>No categories present</strong>
     {% endif %}
 
-    <a href="/moneykatz/add_category/">Add a New Category</a><br />
+    <a href="{% url 'add_category' %}">Add a New Category</a><br />
 
     <h2>Most Viewed Files</h2>
     {% if files %}
@@ -42,10 +35,4 @@
     {% else %}
         <strong>No files present</strong>
     {% endif %}
-
-    <a href="/moneykatz/about/">About this site</a><br />
-
-    <img src="{% static 'images/moneykatz-logo.svg' %}" alt="picture of a cat" />
-
-</body>
-</html>
+{% endblock %}

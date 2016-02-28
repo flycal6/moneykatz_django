@@ -1,19 +1,13 @@
-<!DOCTYPE html>
+{% extends 'moneykatz/base.html' %}
 
 {% load staticfiles %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-</head>
-<body>
+{% block title %}About{% endblock %}
+
+{% block body_block %}
     <h1>About</h1><br />
     
-    {{ aboutmessage }}
+    {{ aboutmessage }}<br />
     
     <img src="{% static 'images/detroitnight.png' %}" alt="detroit crumbly" />
-    
-    <a href="/moneykatz/">Main Page</a>
-</body>
-</html>
+{% endblock %}

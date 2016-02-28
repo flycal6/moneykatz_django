@@ -1,8 +1,15 @@
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from moneykatz.models import Category, File
 from moneykatz.forms import CategoryForm, FileForm, UserProfileForm, UserForm
+
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/moneykatz/')
 
 
 def user_login(request):
@@ -65,6 +72,7 @@ def register(request):
                   {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
 
+@login_required
 def add_file(request, category_name_slug):
     try:
         cat = Category.objects.get(slug=category_name_slug)
@@ -93,6 +101,7 @@ def add_file(request, category_name_slug):
     return render(request, 'moneykatz/add_file.html', context_dict)
 
 
+@login_required
 def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)

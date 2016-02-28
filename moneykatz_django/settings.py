@@ -88,6 +88,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_URL = '/moneykatz/login/'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
