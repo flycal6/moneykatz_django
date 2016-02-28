@@ -7,6 +7,16 @@ from moneykatz.forms import CategoryForm, FileForm
 from moneykatz.models import Category, File
 
 
+def jresume(request):
+    context_dict = {}
+    return render(request, 'moneykatz/jresume.html', context_dict)
+
+
+def resume(request):
+    context_dict = {}
+    return render(request, 'moneykatz/resume.html', context_dict)
+
+
 @login_required
 def add_file(request, category_name_slug):
     try:
@@ -34,6 +44,7 @@ def add_file(request, category_name_slug):
     context_dict = {'form': form, 'category': cat, 'category_name_slug': category_name_slug}
 
     return render(request, 'moneykatz/add_file.html', context_dict)
+
 
 @login_required()
 def cat_list(request):
