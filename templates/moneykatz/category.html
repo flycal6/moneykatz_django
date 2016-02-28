@@ -21,9 +21,14 @@
             {% else %}
                 <strong>No files in category</strong>
             {% endif %}
+        <br />
+    <a href="/moneykatz/category/{{ category_name_slug }}/add_file/">Add a File</a>
+    <br />
     {% else %}
         The category {{ category_name }} does not exist
     {% endif %}
+
+    <a href="/moneykatz/">Home</a>
 
 </body>
 </html>

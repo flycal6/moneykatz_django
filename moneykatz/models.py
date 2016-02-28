@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -9,7 +10,6 @@ class Category(models.Model):
     slug = models.SlugField()
 
     def save(self, *args, **kwargs):
-
         self.slug = slugify(self.name)
         super(Category, self).save(*args, **kwargs)
 
@@ -25,3 +25,13 @@ class File(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+
+    picture = models.ImageField(upload_to='profile_images', blank=True)
+    spririt_animal_picture = models.ImageField(upload_to='spirit_images', blank=True)
+
+    def __unicode__(self):
+        return self.user.username

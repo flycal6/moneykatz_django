@@ -1,6 +1,34 @@
 from django.shortcuts import render
 from moneykatz.models import Category, File
-from moneykatz.forms import CategoryForm
+from moneykatz.forms import CategoryForm, FileForm
+
+
+def add_file(request, category_name_slug):
+    try:
+        cat = Category.objects.get(slug=category_name_slug)
+    except Category.DoesNotExist:
+        cat = None
+
+    if request.method == 'POST':
+        form = FileForm(request.POST, request.FILES)
+        if form.is_valid():
+            if cat:
+                document = form.save(commit=False)
+                document.category = cat
+                document.views = 0
+                document.save()
+
+                return category(request, category_name_slug)
+
+        else:
+            print form.errors
+
+    else:
+        form = FileForm()
+
+    context_dict = {'form': form, 'category': cat, 'category_name_slug': category_name_slug}
+
+    return render(request, 'moneykatz/add_file.html', context_dict)
 
 
 def add_category(request):
@@ -31,6 +59,7 @@ def category(request, category_name_slug):
         files = File.objects.filter(category=category)
         context_dict['files'] = files
         context_dict['category'] = category
+        context_dict['category_name_slug'] = category_name_slug
 
     except Category.DoesNotExist:
         pass

@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'moneykatz',
+    'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,6 +50,14 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.BCryptSHA256Passwordhasher',
+    'django.contrib.auth.hashers.BCryptPasswordhasher',
+    'django.contrib.auth.hashers.PBKDF2Passwordhasher',
+    'django.contrib.auth.hashers.PBKDFSHA1Passwordhasher',
+)
+
 
 ROOT_URLCONF = 'moneykatz_django.urls'
 

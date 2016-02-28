@@ -1,4 +1,15 @@
+bcrypt==2.0.0
+cffi==1.5.2
 Django==1.7
 django-bootstrap-toolkit==2.15.0
+django-bootstrap3==7.0.0
 django-registration-redux==1.4
+mercurial==3.6.3
+numpy==1.10.4
 Pillow==3.1.1
+pycparser==2.14
+pygame==1.9.2a0
+rango==0.0.2a0
+six==1.10.0
+Unidecode==0.4.19
+wheel==0.26.0
