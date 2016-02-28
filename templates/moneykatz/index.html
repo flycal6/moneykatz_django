@@ -8,10 +8,15 @@
     <title>Moneykatz</title>
 </head>
 <body>
-    <h1>Welcome</h1>
+    {% if user.is_authenticated %}
+    <h1>Welcome {{ user.username }}</h1>
+    {% else %}
+    <h1>Welcome Stranger</h1>
+    {% endif %}
     Hello World! <strong>{{ boldmessage }}</strong><br />
 
-    <a href="/moneykatz/register/">Register Here</a>
+    <a href="/moneykatz/register/">Register Here</a><br />
+    <a href="/moneykatz/login/">Login</a><br />
 
     <h2>Categories</h2>
 
