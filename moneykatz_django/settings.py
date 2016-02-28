@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'moneykatz',
     'bootstrap3',
     'bcrypt',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,7 +59,8 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 )
-
+# Set daily cron job of python manage.py clearsessions
+SESSION_COOKIE_AGE = 1209600
 
 ROOT_URLCONF = 'moneykatz_django.urls'
 

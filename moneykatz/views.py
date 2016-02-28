@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
+from datetime import datetime
 from moneykatz.models import Category, File
 from moneykatz.forms import CategoryForm, FileForm, UserProfileForm, UserForm
 
@@ -139,14 +140,36 @@ def category(request, category_name_slug):
 
 
 def index(request):
-    category_list = Category.objects.order_by('-likes')[:5]
+    category_list = Category.objects.all()
     files_list = File.objects.order_by('-views')[:5]
     context_dict = {'categories': category_list,
                     'files': files_list,
                     'boldmessage': 'I am a bold message from the context dict',
                     }
 
-    return render(request, 'moneykatz/index.html', context_dict)
+    visits = request.session.get('visits')
+    if not visits:
+        visits = 1
+    reset_last_visit_time = False
+
+    last_visit = request.session.get('last_visit')
+    if last_visit:
+        last_visit_time = datetime.strptime(last_visit[: -7], "%Y-%m-%d %H:%M:%S")
+
+        if (datetime.now() - last_visit_time).seconds > 7200:
+            visits += 1
+            reset_last_visit_time = True
+
+    else:
+        reset_last_visit_time = True
+
+    if reset_last_visit_time:
+        request.session['last_visit'] = str(datetime.now())
+        request.session['visits'] = visits
+    context_dict['visits'] = visits
+
+    response = render(request, 'moneykatz/index.html', context_dict)
+    return response
 
 
 def about(request):
