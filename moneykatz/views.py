@@ -35,6 +35,17 @@ def add_file(request, category_name_slug):
 
     return render(request, 'moneykatz/add_file.html', context_dict)
 
+@login_required()
+def cat_list(request):
+    category_list = Category.objects.all()
+    files_list = File.objects.order_by('-views')[:10]
+    context_dict = {'categories': category_list,
+                    'files': files_list,
+                    'boldmessage': 'I am a bold message from the context dict',
+                    }
+
+    return render(request, 'moneykatz/cat_list.html', context_dict)
+
 
 @login_required
 def add_category(request):
@@ -107,6 +118,7 @@ def index(request):
 
 
 def about(request):
-    context_dict = {'aboutmessage': 'This is a context dict variable'}
+    visits = request.session.get('visits')
+    context_dict = {'aboutmessage': 'This is a context dict variable', 'visits': visits}
 
     return render(request, 'moneykatz/about.html', context_dict)
