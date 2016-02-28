@@ -59,6 +59,7 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 )
+
 # Set daily cron job of python manage.py clearsessions
 SESSION_COOKIE_AGE = 1209600
 
@@ -90,7 +91,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_URL = '/moneykatz/login/'
+LOGIN_URL = '/accounts/login/'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -112,3 +113,11 @@ TEMPLATE_DIRS = (TEMPLATE_PATH,
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Registration Redux
+
+REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/moneykatz/'
+LOGIN_URL = '/accounts/login/'

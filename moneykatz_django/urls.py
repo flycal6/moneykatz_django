@@ -10,6 +10,7 @@ urlpatterns = patterns('',
 
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^moneykatz/', include('moneykatz.urls')),
+                       url(r'^accounts/', include('registration.backends.simple.urls')),
                        )
 if settings.DEBUG:
     urlpatterns += patterns(
