@@ -28,6 +28,10 @@ body {
     z-index: 3;
 }
 
+.panel-footer img {
+    max-height: 25px;
+}
+
 /* Sidebar
 -------------------------------------------------- */
 

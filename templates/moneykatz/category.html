@@ -6,7 +6,18 @@
 
 {% block body_block %}
     {% if category %}
-        <h1>{{ category_name }}</h1>
+        <div class="row">
+            <h1 style="float: left;">{{ category_name }}</h1>
+            <p style="float: left; padding: 38px 0 0 10px;"><strong id="like_count">{{ category.likes }} </strong> likes!</p><br style="clear: both;" />
+                {% if user.is_authenticated %}
+                    <button id="likes" data-catid="{{ category.id }}" class="btn btn-primary btn-xs" type="button">
+                        <span class="glyphicon glyphicon-thumbs-up"></span>
+                        Like
+                    </button>
+                {% endif %}
+        </div>
+
+
             {% if files %}
             <ul>
                 {% for file in files %}
@@ -17,11 +28,12 @@
                 <strong>No files in category</strong>
             {% endif %}
         <br />
-    <a href="{% url 'category' category_name_slug %}add_file/">Add a File</a>
-    <br />
+        <a href="{% url 'category' category_name_slug %}add_file/">Add a File</a>
+        <br />
+
     {% else %}
         The category {{ category_name }} does not exist
     {% endif %}
+    
 
-    <a href="{% url 'index' %}">Home</a>
 {% endblock %}
