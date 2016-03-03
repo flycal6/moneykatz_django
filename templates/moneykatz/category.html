@@ -7,10 +7,11 @@
 {% block body_block %}
     {% if category %}
         <div class="row">
-            <h1 style="float: left;">{{ category_name }}</h1>
-            <p style="float: left; padding: 38px 0 0 10px;"><strong id="like_count">{{ category.likes }} </strong> likes!</p><br style="clear: both;" />
+            <h1 style="float: left;margin-left: 10px;">{{ category_name }}</h1>
+            <p class="text-muted" style="float: left; margin: 38px 0 0 10px;"><strong id="like_count">{{ category.likes }} </strong>
+                likes</p>
                 {% if user.is_authenticated %}
-                    <button id="likes" data-catid="{{ category.id }}" class="btn btn-primary btn-xs" type="button">
+                    <button id="likes" data-catid="{{ category.id }}" class="btn btn-primary btn-xs" type="button" style="float: left; margin: 38px 0 0 10px;">
                         <span class="glyphicon glyphicon-thumbs-up"></span>
                         Like
                     </button>
