@@ -8,6 +8,10 @@ from moneykatz.forms import CategoryForm, FileForm
 from moneykatz.models import Category, File
 
 
+def gallery(request):
+    context_dict = {}
+    return render(request, 'moneykatz/gallery.html', context_dict)
+
 @login_required
 def like_category(request):
     cat_id = None
@@ -25,8 +29,8 @@ def like_category(request):
     return HttpResponse(likes)
 
 def blog(request):
-    contextdict = {}
-    return render(request, 'moneykatz/blog.html', contextdict)
+    context_dict = {}
+    return render(request, 'moneykatz/blog.html', context_dict)
 
 def jresume(request):
     context_dict = {}

@@ -12,5 +12,6 @@ urlpatterns = patterns(
     url(r'^resume/$', views.resume, name='resume'),
     url(r'^jacqueline-thomas-resume/$', views.jresume, name='jackie-thomas'),
     url(r'^like_category/$', views.like_category, name='like_category'),
-    url(r'^blog/$', views.blog, name='blog'),
+    url(r'^django-secret-key/$', views.blog, name='blog'),
+    url(r'^gallery/$', views.gallery, name='gallery'),
 )
