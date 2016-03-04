@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from registration.backends.simple.views import RegistrationView
-
+from filebrowser.sites import site
 
 class MyRegistrationView(RegistrationView):
     def get_success_url(self, user=None):
@@ -14,6 +14,7 @@ urlpatterns = patterns('',
                        # url(r'^$', 'moneykatz_django.views.home', name='home'),
                        # url(r'^blog/', include('blog.urls')),
 
+                       url(r'^admin/filebrowser/', include(site.urls)),
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^moneykatz/', include('moneykatz.urls')),
                        url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),

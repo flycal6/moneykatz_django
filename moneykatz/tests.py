@@ -5,7 +5,35 @@ from moneykatz.models import Category
 from django.core.urlresolvers import reverse
 
 
+# Helper for test_index_view_with_categories
+def add_cat(name, views, likes):
+
+    c = Category.objects.get_or_create(name=name)[0]
+    c.views = views
+    c.likes = likes
+    c.save()
+    return c
+
+
 class IndexViewTests(TestCase):
+
+    def test_index_view_with_categories(self):
+        """
+        Check that appropriate categories load
+        :return:
+        """
+        add_cat('test', 1, 1)
+        add_cat('temp', 1, 1)
+        add_cat('tmp', 1, 1)
+        add_cat('tmp test temp', 1, 1)
+
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'tmp test temp')
+
+        num_cats = len(response.context['categories'])
+        self.assertEqual(num_cats, 4)
+
 
     def test_index_view_with_no_categories(self):
         """
