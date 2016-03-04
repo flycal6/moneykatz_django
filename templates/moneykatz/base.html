@@ -54,7 +54,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
                 <li><a href="http://github.com/flycal6">Github</a></li>
                 <li><a href="{% url 'cat_list' %}">File Server</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -86,22 +86,23 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 main col-md-offset-2">
             {% block body_block %}Default body content{% endblock %}
+
         <hr />
 
-    <div>
-        <img src="{% static 'images/moneykatz-logo.svg' %}"  alt="picture of a cat" style="max-height: 125px; float:right;"/>
-        <ul>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'auth_logout' %}?next=/moneykatz/">Logout</a> </li>
-                <li><a href="{% url 'auth_password_change' %}">Change Password</a> </li>
-                <li><a href="{% url 'add_category' %}">Add a New Category</a> </li>
-            {% else %}
-                <li><a href="{% url 'registration_register' %}">Register</a> </li>
-                <li><a href="{% url 'auth_login' %}">Login</a> </li>
-            {% endif %}
-                <li><a href="{% url 'about' %}">About</a> </li>
-        </ul>
-    </div>
+            <div>
+                <img src="{% static 'images/moneykatz-logo.svg' %}"  alt="picture of a cat" style="max-height: 125px; float:right;"/>
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'auth_logout' %}?next=/moneykatz/">Logout</a> </li>
+                        <li><a href="{% url 'auth_password_change' %}">Change Password</a> </li>
+                        <li><a href="{% url 'add_category' %}">Add a New Category</a> </li>
+                    {% else %}
+                        <li><a href="{% url 'registration_register' %}">Register</a> </li>
+                        <li><a href="{% url 'auth_login' %}">Login</a> </li>
+                    {% endif %}
+                        <li><a href="{% url 'about' %}">About</a> </li>
+                </ul>
+            </div>
     <p> visits: {{ visits }}</p>
     <hr />
     <br />

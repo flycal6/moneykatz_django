@@ -24,6 +24,9 @@ def like_category(request):
 
     return HttpResponse(likes)
 
+def blog(request):
+    contextdict = {}
+    return render(request, 'moneykatz/blog.html', contextdict)
 
 def jresume(request):
     context_dict = {}

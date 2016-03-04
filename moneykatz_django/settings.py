@@ -125,3 +125,5 @@ LOGIN_URL = '/accounts/login/'
 
 # Filebrowser Settings
 
+from filebrowser.settings import settings
+FILEBROWSER_DIRECTORY = getattr(settings, 'FILEBROWSER_DIRECTORY', MEDIA_ROOT)
