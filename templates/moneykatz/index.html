@@ -5,7 +5,7 @@
 {% block body_block %}
     <div class="page-header">
         <h1>Moneykatz</h1>
-        <p class="lead">Good websites. Trivia domination.</p>
+        <p class="lead">Good software. Trivia domination.</p>
     </div>
 
     <div class="row featurette">
@@ -24,11 +24,11 @@
 
     <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-            <h2 class="featurette-heading">See a sample gallery. <span class="text-muted">Some graphic design samples</span></h2>
+            <h2 class="featurette-heading">See a sample gallery <span class="text-muted">with some graphic design samples</span></h2>
             <p class="lead">Have a look at an image gallery website.  You'll find a few samples of graphic design work.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-            <a href="gallery.html"> <img class="featurette-image img-responsive center-block" style="max-height: 256px" src="{% static 'images/moneykatz-logo-graphic-design.svg' %}" alt="Gallery Logo"></a>
+            <a href="{% url 'gallery' %}"> <img class="featurette-image img-responsive center-block" style="max-height: 256px" src="{% static 'galleryimages/kuwait.png' %}" alt="Gallery Logo"></a>
         </div>
     </div>
 
@@ -36,7 +36,7 @@
 
     <div class="row featurette">
         <div class="col-md-7">
-            <h2 class="featurette-heading">Programming. <span class="text-muted">Backend too.</span></h2>
+            <h2 class="featurette-heading">Programming <span class="text-muted">and web design</span></h2>
             <p class="lead">I write the backend as well as the front.  Check out this one.  It's a maintenance
                 ticketing system.  An html page is generated on the fly, confirming your request.  It also sends the
                 ticket to the maintenance department, and you get an email back, confirming delivery.</p>

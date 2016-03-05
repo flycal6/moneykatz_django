@@ -5,18 +5,22 @@
 {% block title %}Blog{% endblock %}
 
 {% block body_block %}
-
+<style>
+    .row {
+        padding-left: 5px;
+    }
+</style>
     <div class="page-header">
         <h1>Django</h1>
         <p class="lead">Generate a new secret key and keep it safe.</p>
     </div>
 
     <div class="row">
-        <div class="col-sm-9 col-md-10 featurette">
+        <div class=" featurette pull-right col-sm-6">
             <h2 class="featurette-heading">Build a django website</h2><br />
                 <span class="lead">And keep the <code>SECRET_KEY</code> out of version control.</span>
         </div>
-        <div class="col-md-push-5">
+        <div class="pull-left col-sm-6">
                 <img class="featurette-image img-responsive center-block" src="{% static 'images/django.png' %}" alt="Django Logo">
         </div>
     </div>
@@ -26,7 +30,7 @@
     <div class="row">
         <h4>Start by opening the terminal and typing in the following script:</h4>
 
-        <div class="col-sm-9 col-md-10">
+        <div>
             <kbd>$ python -c 'import random; import string;
             print "".join([random.SystemRandom().choice(string.digits +
             string.letters + string.punctuation) for i in range(100)])'
@@ -39,7 +43,7 @@
     <div class="row">
         <h4>Let me explain the above script. It's safe to skip this if you don't care.</h4>
 
-        <div class="col-sm-9 col-md-10">
+        <div>
 
             <p>'Python -c' is telling Python to execute the whole script as a
             one-liner.  We're importing 'random' and 'string' to pick random characters for us and to convert
@@ -55,13 +59,13 @@
 
     <div class="row">
         <h4>Now let's make a file to hide the key in.</h4>
-        <div class="col-sm-9 col-md-10">
+        <div>
             <p>In the same project directory that has settings.py, make a file called
                 &ltsecrets.py&gt and open it.  You can do this in the terminal like so:</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-9 col-md-10">
+        <div>
             <kbd>$ cd ~/your/project/directory/<br />
             $ touch secrets.py<br />
             $ open secrets.py</kbd>
@@ -71,12 +75,12 @@
 
     <div class="row">
         <h4>Store your new <code>SECRET_KEY</code></h4>
-        <div class="col-sm-9 col-md-10">
+        <div>
             <p>Delete any text that might be in the file and replace it with:</p>
         </div>
     </div>
     <div class="row">
-        <div class="code col-sm-9 col-md-10">
+        <div>
             <code>django_secret_key = "the_new_key_you_just_made"</code>
         </div>
     </div>
@@ -84,13 +88,13 @@
 
     <div class="row">
         <h4>Import our newly hidden key</h4>
-        <div class="col-sm-9 col-md-10">
+        <div>
             <p>Open &ltsettings.py&gt. We'll import everything in the file, in case you add more secrets later.
             Add this to your import statements at the top of the file:</p>
         </div>
     </div>
     <div class="row">
-        <div class="code col-sm-9 col-md-10">
+        <div>
             <code>from secrets.py import *</code>
         </div>
     </div>
@@ -99,13 +103,13 @@
 
     <div class="row">
         <h4>Remove the key from settings.py</h4>
-        <div class="col-sm-9 col-md-10">
+        <div>
             <p>In &ltsettings.py&gt, delete the
             old key and replace it as:</p>
         </div>
     </div>
     <div class="row">
-        <div class="code col-sm-9 col-md-10">
+        <div>
             <code>SECRET_KEY = django_secret_key</code>
         </div>
     </div>
@@ -113,20 +117,20 @@
 
     <div class="row">
         <h4>Make sure &ltsecrets.py&gt stays out of version control</h4>
-        <div class=" col-sm-9 col-md-10">
+        <div>
             <p>Add <span class="code">&ltsecrets.py&gt</span> to your .gitignore file.
             If you don't have one, create and edit it with:</p>
         </div>
     </div>
     <div class="row">
-        <div class="code col-sm-9 col-md-10">
+        <div>
             <code>$ touch .gitignore <br />
             $ open .gitignore</code>
         </div>
     </div>
     <hr class="featurette-divider">
     <div class="row">
-        <div class="col-sm-9 col-md-10">
+        <div>
             <p>And you're good as gold.<br />
             If you are wondering what happens when you change your SECRET_KEY, the main
             thing is that all your users will have to log back in, and any in-process
