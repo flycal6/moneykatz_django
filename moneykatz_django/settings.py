@@ -7,26 +7,25 @@ https://docs.djangoproject.com/en/1.7/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
+from secrets import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+rhky_p##2d++!gsea1d%yqw89!12@ignuu__-*_2f5sa1+n$x'
+SECRET_KEY = secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -68,7 +67,6 @@ ROOT_URLCONF = 'moneykatz_django.urls'
 
 WSGI_APPLICATION = 'moneykatz_django.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
@@ -93,7 +91,6 @@ USE_L10N = True
 USE_TZ = True
 
 LOGIN_URL = '/accounts/login/'
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
@@ -130,9 +127,10 @@ FILEBROWSER_DIRECTORY = getattr(settings, 'FILEBROWSER_DIRECTORY', MEDIA_ROOT)
 
 # Email Settings
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'testing@example.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-EMAIL_PORT = 1025
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # change to console.EmailBackend for testing
+DEFAULT_FROM_EMAIL = website_email
+EMAIL_HOST = email_host
+EMAIL_HOST_USER = host_user
+EMAIL_HOST_PASSWORD = host_password
+EMAIL_USE_TLS = True
+EMAIL_PORT = port

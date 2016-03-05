@@ -1,4 +1,5 @@
 from datetime import datetime
+from secrets import website_email
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
@@ -20,10 +21,12 @@ def contact(request):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
 
+            message = message + '\nSent From: ' + from_email
+
             try:
-                send_mail(subject, message, from_email, ['brian@moneykatz.com'])
+                send_mail(subject, message, website_email, [website_email],)
             except BadHeaderError:
-                return HttpResponse('Invalid Header Found.  Are you a bot?')
+                return HttpResponse('Invalid Header Found.  Are trying to hack me?')
             return redirect('thanks')
 
     else:
@@ -33,7 +36,8 @@ def contact(request):
 
 
 def thanks(request):
-    return HttpResponse('Thank you for your message.')
+    context_dict = {}
+    return render(request, 'moneykatz/thanks.html', context_dict)
 
 
 def fixit(request):
