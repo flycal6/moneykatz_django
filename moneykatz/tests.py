@@ -4,6 +4,7 @@ from django.test import TestCase
 from moneykatz.models import Category
 from django.core.urlresolvers import reverse
 from django.core import mail
+from moneykatz.views import send_mail
 
 
 # Helper for test_index_view_with_categories
@@ -34,7 +35,6 @@ class IndexViewTests(TestCase):
 
         num_cats = len(response.context['categories'])
         self.assertEqual(num_cats, 4)
-
 
     def test_index_view_with_no_categories(self):
         """
@@ -73,12 +73,16 @@ class EmailTest(TestCase):
 
     def test_send_email(self):
         # Send message.
-        mail.send_mail('Subject here', 'Here is the message.',
-            'from@example.com', ['to@example.com'],
-            fail_silently=False)
+        send_mail('Subject here', 'Here is the message.', 'from@example.com', ['to@example.com'], fail_silently=False)
 
         # Test that one message has been sent.
         self.assertEqual(len(mail.outbox), 1)
 
         # Verify that the subject of the first message is correct.
         self.assertEqual(mail.outbox[0].subject, 'Subject here')
+
+        # Verify sender's email
+        self.assertEqual(mail.outbox[0].from_email, 'from@example.com')
+
+        # Verify correct recipient
+        self.assertEqual(mail.outbox[0].to, ['to@example.com'])
