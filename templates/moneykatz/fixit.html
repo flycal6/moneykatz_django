@@ -1,0 +1,58 @@
+{% extends 'moneykatz/base.html' %}
+{% load staticfiles %}
+{% block title %} Maintenance Form{% endblock %}
+
+{% block body_block %}
+
+    <div style="background-color:#323E4D" class="row">
+        <div>
+        <!-- <div class="bg-primary"> -->
+            <img src="http://www.ask.edu.kw/img/logo.png" class="img-responsive">
+        </div>
+    </div>
+
+<div class="container" style="max-width: 700px">
+    <div class="page-header">
+        <h1>FixIt</h1>
+    </div>
+    <p class="lead">Maintenance ticket system with confirmation page and html emails to user and maintenance</p>
+
+    <form action="/php/fixitmail.php" method="post">
+        <div class="radio">
+            <label>
+                <input type="radio" name="maintOptions" id="maintOptions1" value="school" checked>
+                School Maintenance
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="maintOptions" id="maintOptions2" value="apartment">
+                Apartment Maintenance
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="room">What is the room or apt number?</label>
+            <input type="text" class="form-control" name="room" id="room" placeholder="Example: F24 or G118">
+        </div>
+        <div class="form-group">
+            <label for="name">Your name?</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Type your name">
+        </div>
+        <div class="form-group">
+            <label for="issue">Please briefly describe the issue.</label>
+            <textarea class="form-control" name="issue" id="issue" rows="5" placeholder="Provide details to help the maintenance staff"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="time">When would you like maintence to arrive?<br /><span class="text-muted small">We will do our best to arrive at this time.</span> </label>
+            <input type="text" class="form-control" name="time" id="time" placeholder="You may leave this blank">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email address">
+        </div>
+        <button type="submit" class="btn btn-primary disabled">Submit Maintenance Request</button>
+
+    </form>
+</div>
+
+{% endblock %}
