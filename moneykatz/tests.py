@@ -3,6 +3,7 @@ from django.test import TestCase
 # Create your tests here.
 from moneykatz.models import Category
 from django.core.urlresolvers import reverse
+from django.core import mail
 
 
 # Helper for test_index_view_with_categories
@@ -66,3 +67,18 @@ class CategoryMethodTests(TestCase):
         cat = Category(name='Random Category String')
         cat.save()
         self.assertEqual(cat.slug, 'random-category-string')
+
+
+class EmailTest(TestCase):
+
+    def test_send_email(self):
+        # Send message.
+        mail.send_mail('Subject here', 'Here is the message.',
+            'from@example.com', ['to@example.com'],
+            fail_silently=False)
+
+        # Test that one message has been sent.
+        self.assertEqual(len(mail.outbox), 1)
+
+        # Verify that the subject of the first message is correct.
+        self.assertEqual(mail.outbox[0].subject, 'Subject here')
