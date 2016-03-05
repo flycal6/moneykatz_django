@@ -3,13 +3,12 @@ from secrets import website_email
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 
 from moneykatz.forms import CategoryForm, FileForm, ContactForm
 from moneykatz.models import Category, File
 
 from django.core.mail import send_mail, BadHeaderError
-
 
 def contact(request):
     if request.method == 'POST':
@@ -21,6 +20,8 @@ def contact(request):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
 
+            # My server doesn't allow email sent from other servers, so sender's address added to message
+            # This could be changed to use a Reply-To by changing send_mail() to EmailMessage()
             message = message + '\nSent From: ' + from_email
 
             try:
@@ -116,7 +117,7 @@ def cat_list(request):
     files_list = File.objects.order_by('-views')[:10]
     context_dict = {'categories': category_list,
                     'files': files_list,
-                    'boldmessage': 'I am a bold message from the context dict',
+                    'header_text': 'Browse, Upload or Download files',
                     }
 
     return render(request, 'moneykatz/cat_list.html', context_dict)

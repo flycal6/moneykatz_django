@@ -11,7 +11,7 @@
         <h1>Welcome Stranger</h1>
         {% endif %}
         </div>
-    Hello World! <strong>{{ boldmessage }}</strong><br />
+    <div class="lead">Online File Storage <span class="small pull-right"> {{ header_text }}</span></div>
 
 <div class="row placeholders">
     <div class="col-xs-12 col-sm-6 placeholder">
@@ -19,27 +19,35 @@
 
         {% if categories %}
         <ul class="list-group">
+
             {% for category in categories %}
                 <li class="list-group-item"><a href="{% url 'category' category.slug %}">{{ category.name }}</a></li>
             {% endfor %}
+
         </ul>
+
         {% else %}
         <strong>No categories present</strong>
+
         {% endif %}
+
         <a href="{% url 'add_category' %}">Add a New Category</a><br />
     </div>
 
     <div class="col-xs-12 col-sm-6 placeholder">
-    <h4>Most Viewed Files</h4>
-    {% if files %}
-        <ul>
+    <h4 class="list-group-item-heading">Most Viewed Files</h4>
+
+        {% if files %}
+        <ul class="list-group">
             {% for file in files %}
-                <li><a href="/media/{{ file.document }}">{{ file.title }}</a></li>
+                <li class="list-group-item"><a href="/media/{{ file.document }}">{{ file.title }}</a></li>
             {% endfor %}
         </ul>
     {% else %}
         <strong>No files present</strong>
-    {% endif %}
+
+        {% endif %}
     </div>
+
 </div>
 {% endblock %}
