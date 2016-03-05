@@ -15,4 +15,6 @@ urlpatterns = patterns(
     url(r'^django-secret-key/$', views.blog, name='blog'),
     url(r'^gallery/$', views.gallery, name='gallery'),
     url(r'^fixit/$', views.fixit, name='fixit'),
+    url(r'^contact/$', views.contact, name='contact'),
+    url(r'^thanks/$', views.thanks, name='thanks'),
 )

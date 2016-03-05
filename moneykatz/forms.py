@@ -37,3 +37,13 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('picture', 'spirit_animal_picture')
+
+
+class ContactForm(forms.Form):
+    from_email = forms.EmailField()
+    subject = forms.CharField(max_length=128, required=True)
+    message = forms.CharField(widget=forms.Textarea, max_length=4096, required=True)
+
+    # class Meta:
+    #     model = Contact
+    #     fields = ('from_email', 'subject', 'message')

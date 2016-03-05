@@ -1,11 +1,39 @@
 from datetime import datetime
 
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 
-from moneykatz.forms import CategoryForm, FileForm
+from moneykatz.forms import CategoryForm, FileForm, ContactForm
 from moneykatz.models import Category, File
+
+from django.core.mail import send_mail, BadHeaderError
+
+
+def contact(request):
+    if request.method == 'POST':
+
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+            from_email = form.cleaned_data['from_email']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+
+            try:
+                send_mail(subject, message, from_email, ['brian@moneykatz.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid Header Found.  Are you a bot?')
+            return redirect('thanks')
+
+    else:
+        form = ContactForm()
+
+    return render(request, 'moneykatz/contact.html', {'form': form})
+
+
+def thanks(request):
+    return HttpResponse('Thank you for your message.')
 
 
 def fixit(request):

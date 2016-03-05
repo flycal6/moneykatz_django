@@ -1,0 +1,37 @@
+{% extends 'moneykatz/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body_block %}
+
+<div class="container-fluid" style="max-width: 721px">
+     <div class="page-header">
+         <h1>Contact Us</h1>
+        </div>
+        <p class="lead">Send me a message I'll get back to you within 24 hours.</p>
+
+<form id="contact_form" method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="from_email">Email</label>
+        <input class="form-control" placeholder="Your Email" type="email" id="from_email" name="from_email">
+    </div>
+    <div class="form-group">
+        <label for="subject">Subject</label>
+        <input class="form-control" placeholder="Subject" type="text" id="subject" name="subject">
+    </div>
+    <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea class="form-control" placeholder="What would you like to say?" id="message" name="message" rows="6" cols="25"></textarea><br />
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+    <button type="reset" class="btn btn-info">Clear Form</button>
+
+</form>
+
+</div>
+
+{% endblock %}
