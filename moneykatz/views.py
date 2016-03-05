@@ -2,6 +2,7 @@ from datetime import datetime
 from secrets import website_email
 
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
@@ -82,7 +83,7 @@ def resume(request):
     return render(request, 'moneykatz/resume.html', context_dict)
 
 
-@login_required
+@staff_member_required
 def add_file(request, category_name_slug):
     try:
         cat = Category.objects.get(slug=category_name_slug)
@@ -141,7 +142,7 @@ def add_category(request):
 
     return render(request, 'moneykatz/add_category.html', {'form': form})
 
-
+@login_required
 def category(request, category_name_slug):
     context_dict = {}
 
