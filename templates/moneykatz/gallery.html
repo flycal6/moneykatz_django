@@ -1,0 +1,86 @@
+{% extends 'moneykatz/base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+<div class="container">
+    <div class="page-header">
+        <h1>Graphic Design Gallery</h1>
+    </div>
+    <p class="lead">Here you will find a sampling of some graphic design using Photoshop</p>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a href="http://gdurl.com/TXI0" target="_blank"><img src="{% static 'galleryimages/kuwait.png' %}" alt="Green Kuwait"></a>
+                <div class="caption">
+                    <h3>Green Kuwait</h3>
+                    <p>If only it was real...</p>
+                    <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+                </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a href="http://gdurl.com/L6eX" target="_blank">
+                <img src="{% static 'galleryimages/detroitnight.png' %}" alt="nighttime in detroit"></a>
+            <div class="caption">
+                <h3>Detroit Night</h3>
+                <p>Artificial Everything</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a href="http://gdurl.com/1inJ" target="_blank">
+                <img src="{% static 'galleryimages/gta.png' %}" alt="gtav"></a>
+            <div class="caption">
+                <h3>Images inside text</h3>
+                <p>An image used to produce the text</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a href="http://gdurl.com/GaDw" target="_blank">
+                <img src="{% static 'galleryimages/elephant.png' %}"  alt="Elephant Reflection"></a>
+            <div class="caption">
+                <h3>Water Reflection</h3>
+                <p>Water reflection and ripples added</p>
+                <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a href="http://gdurl.com/p6DS" target="_blank">
+                <img src="{% static 'galleryimages/poster.png' %}" alt="poster"></a>
+            <div class="caption">
+                <h3>Event Poster</h3>
+                <p>The good times never end</p>
+                <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a href="http://gdurl.com/7fsh" target="_blank">
+                <img src="{% static 'galleryimages/detroitcomparison.png' %}" alt="Detroit before and after"></a>
+            <div class="caption">
+                <h3>Comparison</h3>
+                <p>Before and after editing</p>
+                <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

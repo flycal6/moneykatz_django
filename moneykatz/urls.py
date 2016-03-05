@@ -14,4 +14,5 @@ urlpatterns = patterns(
     url(r'^like_category/$', views.like_category, name='like_category'),
     url(r'^django-secret-key/$', views.blog, name='blog'),
     url(r'^gallery/$', views.gallery, name='gallery'),
+    url(r'^fixit/$', views.fixit, name='fixit'),
 )

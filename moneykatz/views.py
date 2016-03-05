@@ -8,6 +8,10 @@ from moneykatz.forms import CategoryForm, FileForm
 from moneykatz.models import Category, File
 
 
+def fixit(request):
+    context_dict = {}
+    return render(request, 'moneykatz/fixit.html', context_dict)
+
 def gallery(request):
     context_dict = {}
     return render(request, 'moneykatz/gallery.html', context_dict)
@@ -30,6 +34,9 @@ def like_category(request):
 
 def blog(request):
     context_dict = {}
+
+    visits = request.session.get('visits')
+    context_dict['visits'] = visits
     return render(request, 'moneykatz/blog.html', context_dict)
 
 def jresume(request):
@@ -114,6 +121,9 @@ def category(request, category_name_slug):
         context_dict['category'] = category
         context_dict['category_name_slug'] = category_name_slug
 
+        visits = request.session.get('visits')
+        context_dict['visits'] = visits
+
     except Category.DoesNotExist:
         pass
 
@@ -147,7 +157,7 @@ def index(request):
     if reset_last_visit_time:
         request.session['last_visit'] = str(datetime.now())
         request.session['visits'] = visits
-    context_dict['visits'] = visits
+    context_dict['visits'] = 'Visits: ' + str(visits)
 
     response = render(request, 'moneykatz/index.html', context_dict)
     return response
