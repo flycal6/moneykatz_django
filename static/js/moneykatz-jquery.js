@@ -14,10 +14,4 @@ $(document).ready(function() {
         msgstr += 'o';
         $(msg).html(msgstr);
     });
-    $('p').hover(function() {
-        $(this).css('color', 'red');
-    },
-        function() {
-            $(this).css('color', 'blue');
-        });
 });
