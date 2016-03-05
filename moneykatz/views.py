@@ -124,7 +124,7 @@ def cat_list(request):
     return render(request, 'moneykatz/cat_list.html', context_dict)
 
 
-@login_required
+@staff_member_required
 def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
