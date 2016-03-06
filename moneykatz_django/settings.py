@@ -25,7 +25,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['drycountrybrewing.com', 'www.drycountrybrewing.com']
+ALLOWED_HOSTS = ['moneykatz.com', 'www.moneykatz.com', 'www.drycountrybrewing.com', 'drycountrybrewing.com']
 
 # Application definition
 
@@ -93,7 +93,7 @@ LOGIN_URL = '/accounts/login/'
 
 STATIC_ROOT = '/home/flycal6/webapps/static/'
 
-STATIC_URL = 'http://drycountrybrewing.com/static/'
+STATIC_URL = 'http://moneykatz.com/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -107,7 +107,7 @@ TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS = (TEMPLATE_PATH,
                  )
 
-MEDIA_URL = 'http://drycountrybrewing.com/media/'
+MEDIA_URL = 'http://moneykatz.com/media/'
 
 MEDIA_ROOT = '/home/flycal6/webapps/media/'
 
