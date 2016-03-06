@@ -106,9 +106,9 @@ TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS = (TEMPLATE_PATH,
                  )
 
-MEDIA_URL = '/home/flycal6/webapps/mkatzdjango/moneykatz_django/media/'
+MEDIA_URL = 'http://drycountrybrewing.com/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/home/flycal6/webapps/media/'
 
 # Registration Redux
 
