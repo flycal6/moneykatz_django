@@ -93,10 +93,11 @@ LOGIN_URL = '/accounts/login/'
 
 STATIC_ROOT = '/home/flycal6/webapps/static/'
 
-STATIC_URL = 'http://www.drycountrybrewing.com/static/'
+STATIC_URL = 'http://drycountrybrewing.com/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+    ''
     '/home/flycal6/webapps/mkatzdjango/moneykatz_django/media/media/',
     '/home/flycal6/webapps/mkatzdjango/moneykatz_django/media/uploads',
 )
