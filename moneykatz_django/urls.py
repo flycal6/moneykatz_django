@@ -5,13 +5,15 @@ from django.conf.urls.static import static
 from registration.backends.simple.views import RegistrationView
 from filebrowser.sites import site
 
+
 class MyRegistrationView(RegistrationView):
     def get_success_url(self, user=None):
         return '/moneykatz/'
 
+
 urlpatterns = patterns('',
                        # Examples:
-                       # url(r'^$', 'moneykatz_django.views.home', name='home'),
+                       url(r'^$', 'moneykatz_django.views.home', name='home'),
                        # url(r'^blog/', include('blog.urls')),
 
                        url(r'^admin/filebrowser/', include(site.urls)),
