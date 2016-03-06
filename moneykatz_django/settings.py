@@ -106,7 +106,7 @@ TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS = (TEMPLATE_PATH,
                  )
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/home/flycal6/webapps/mkatzdjango/moneykatz_django/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
