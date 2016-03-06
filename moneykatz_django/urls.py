@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from registration.backends.simple.views import RegistrationView
 from filebrowser.sites import site
+from moneykatz import views
 
 
 class MyRegistrationView(RegistrationView):
@@ -13,7 +14,6 @@ class MyRegistrationView(RegistrationView):
 
 urlpatterns = patterns('',
                        # Examples:
-                       url(r'^$', 'moneykatz_django.views.home', name='home'),
                        # url(r'^blog/', include('blog.urls')),
 
                        url(r'^admin/filebrowser/', include(site.urls)),
@@ -21,6 +21,7 @@ urlpatterns = patterns('',
                        url(r'^moneykatz/', include('moneykatz.urls')),
                        url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
                        url(r'^accounts/', include('registration.backends.simple.urls')),
+                       url(r'^$', views.index, name='index'),
                        )
 if settings.DEBUG:
     urlpatterns += patterns(
