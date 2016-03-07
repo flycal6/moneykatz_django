@@ -97,7 +97,6 @@ STATIC_URL = 'http://moneykatz.com/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    '/home/flycal6/webapps/static/fonts'
     '/home/flycal6/webapps/mkatzdjango/moneykatz_django/media/media/',
     '/home/flycal6/webapps/mkatzdjango/moneykatz_django/media/uploads',
 )
