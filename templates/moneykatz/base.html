@@ -99,6 +99,9 @@
             <div>
                 <ul class="list-inline">
                     {% if user.is_authenticated %}
+                        {% if user.is_staff %}
+                            <li><a href="{% url 'admin:index' %}">Admin</a> </li>
+                        {% endif %}
                         <li><a href="{% url 'auth_logout' %}?next=/moneykatz/">Logout</a> </li>
                         <li><a href="{% url 'auth_password_change' %}">Change Password</a> </li>
                     {% else %}
