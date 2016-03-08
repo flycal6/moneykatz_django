@@ -71,6 +71,11 @@ body {
   color: #fff;
   background-color: #428bca;
 }
+.sidebar-image {
+    max-height: 125px;
+    position:relative;
+    bottom: 0;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
