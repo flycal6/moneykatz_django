@@ -3,7 +3,6 @@
  */
 
 var aboutbtn = $('#about-btn');
-var msg = '#msg';
 
 $(document).ready(function() {
     aboutbtn.click(function(event) {
@@ -14,5 +13,11 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('.addcat').click(function(event) {
         $('i.addcat').toggleClass('fa-folder-o fa-spinner fa-pulse');
+    });
+});
+
+$(document).ready(function() {
+    $('.addfile').click(function(event) {
+        $('i.addfile').toggleClass('fa-cloud-upload fa-spinner fa-pulse');
     });
 });

@@ -4,7 +4,7 @@ from moneykatz.models import File, Category, UserProfile
 
 
 class CategoryForm(forms.ModelForm):
-    name = forms.CharField(max_length=128, help_text='Name the category')
+    name = forms.CharField(max_length=128, label='Category Name')
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     slug = forms.CharField(widget=forms.HiddenInput(), required=False)
@@ -15,7 +15,8 @@ class CategoryForm(forms.ModelForm):
 
 
 class FileForm(forms.ModelForm):
-    title = forms.CharField(max_length=128, help_text='Give a Title')
+    title = forms.CharField(max_length=128, label='Provide a filename',
+                            widget=forms.TextInput(attrs={'placeholder': 'File Display Name'}))
     document = forms.FileField(label='Select a File', help_text='max. 42Mb')
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
