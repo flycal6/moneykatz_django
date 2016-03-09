@@ -9,7 +9,8 @@
         {% endif %}
         <a href="{% url 'category' c.slug %}">{{ c.name }}</a> </li>
     {% endfor %}
+</ul>
 {% else %}
     <li><strong>Where the hell are the categories?  Dev fucked up.</strong></li>
-</ul>
+
 {% endif %}
