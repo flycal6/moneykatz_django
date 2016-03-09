@@ -9,9 +9,10 @@ $(document).ready(function() {
     aboutbtn.click(function(event) {
         $(this).addClass('btn btn-primary');
     });
-    aboutbtn.click(function(event) {
-        var msgstr = $(msg).html();
-        msgstr += 'o';
-        $(msg).html(msgstr);
+});
+
+$(document).ready(function() {
+    $('.addcat').click(function(event) {
+        $('i.addcat').toggleClass('fa-folder-o fa-spinner fa-pulse');
     });
 });

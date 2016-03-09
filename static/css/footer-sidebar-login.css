@@ -93,10 +93,18 @@ body > .container {
     padding-left: 15px;
 }
 
-code {
-    font-size: 80%;
-}
+/*code {*/
+    /*font-size: 80%;*/
+/*}*/
 
+
+/* add_category.html CSS
+-------------------------------------------------- */
+.form-category {
+  max-width: 730px;
+  padding: 15px;
+  margin: 0 auto;
+}
 
 /* login.html CSS
 -------------------------------------------------- */

@@ -10,14 +10,19 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" defer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}" defer></script>
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/footer-sidebar-login.css' %}" rel="stylesheet">
 
     {# Font Awesome CDN #}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
 
     <link rel="icon" href="{% static 'images/moneykatzlogo.png' %}">
 
@@ -140,17 +145,9 @@
 <!-- Bootstrap core JavaScript and jQuery
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="{% static 'js/moneykatz-jquery.js' %}"></script>
-<script src="{% static 'js/moneykatz-ajax.js' %}"></script>
+<script src="{% static 'js/moneykatz-jquery.js' %}" defer></script>
+<script src="{% static 'js/moneykatz-ajax.js' %}" defer></script>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
 
 </body>
 </html>

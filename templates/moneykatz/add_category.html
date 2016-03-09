@@ -4,18 +4,19 @@
 
 {% load bootstrap3 %}
 {% bootstrap_css %}
-{% bootstrap_javascript %}
+{#{% bootstrap_javascript %}#}
 {% bootstrap_messages %}
 
 {% block title %}Add Category{% endblock %}
 
 {% block body_block %}
-    <form id="category_form" method="post" action="{% url 'add_category' %}">
+
+    <form class="form-category" id="category_form" method="post" action="{% url 'add_category' %}">
 
         <h2 class="form-signin-heading">Create a New Category</h2>
         {% csrf_token %}
 
-          {% bootstrap_form form layout='horizontal' show_label=False %}
+          {% bootstrap_form form layout='inline' show_label=False %}
 
 
 {#        {% for hidden in form.hidden_fields %}#}
@@ -28,11 +29,12 @@
 {#            {{ field }}#}
 {#        {% endfor %}#}
 
-        {% buttons %}
-            <button type="submit" class="btn btn-primary" name="submit">
-            {% bootstrap_icon "star" %} Submit
+        {% buttons layout='inline' %}
+            <button type="submit" class="addcat btn btn-primary" name="submit">
+            <i class="addcat fa fa-folder-o"></i> Create
             </button>
         {% endbuttons %}
 
     </form>
+
 {% endblock %}
