@@ -1,0 +1,43 @@
+{% extends 'moneykatz/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}For Sale Items{% endblock %}
+<style>
+    .sale-image {
+        float: left;
+    }
+</style>
+{% block body_block %}
+    <div class="page-header">
+        <h1>For Sale Items</h1>
+    </div>
+
+    <div>
+        <h4>
+            Item Title - 20KD
+        </h4>
+        <div style="display: inline-block;">
+        <img style="float: left; margin-right: 10px" src="{% static 'images/falconbig.png' %}">
+        <img style="float:left; margin-right: 10px;" src="{% static 'images/falconbig.png' %}">
+        <p style="float:left; position: relative; margin-top: 100px;">Purchased:  Available<br />
+        Paid: No</p>
+            </div>
+        <p class="lead sale-item">Item Description - You know what's sucky about regular flashlights? They only come in
+            two colors: white or that yellowish-white that reminds us of the teeth of an avid coffee drinker. What fun
+            is that kind of flashlight? We'll answer that: NO FUN AT ALL. You know what is fun? Using the Multi-Color
+            LED Flashlight to cast a sickly green glow over your face while telling a zombie story around a campfire.
+            No campfire? Make a fake one with the orange light!</p>
+        <hr>
+    </div>
+    <div>
+        <img class="sale-image" src="{% static 'images/falconbig.png' %}">
+        <p class="lead sale-item">Item Description</p>
+        <hr>
+    </div>
+    <div>
+        <img class="sale-image" src="{% static 'images/falconbig.png' %}">
+        <p class="lead sale-item">Item Description</p>
+        <hr>
+    </div>
+{% endblock %}

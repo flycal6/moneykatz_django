@@ -17,4 +17,5 @@ urlpatterns = patterns(
     url(r'^fixit/$', views.fixit, name='fixit'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^thanks/$', views.thanks, name='thanks'),
+    url(r'^for-sale/$', views.for_sale, name='for-sale'),
 )
