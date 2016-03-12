@@ -11,6 +11,7 @@ from moneykatz.models import Category, File
 
 from django.core.mail import send_mail, BadHeaderError
 
+
 def contact(request):
     if request.method == 'POST':
 
@@ -26,7 +27,7 @@ def contact(request):
             message = message + '\nSent From: ' + from_email
 
             try:
-                send_mail(subject, message, website_email, [website_email],)
+                send_mail(subject, message, website_email, [website_email], )
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found.  Are trying to hack me?')
             return redirect('thanks')
@@ -46,11 +47,12 @@ def fixit(request):
     context_dict = {}
     return render(request, 'moneykatz/fixit.html', context_dict)
 
+
 def gallery(request):
     context_dict = {}
     return render(request, 'moneykatz/gallery.html', context_dict)
 
-@login_required
+
 def like_category(request):
     cat_id = None
     if request.method == 'GET':
@@ -66,12 +68,14 @@ def like_category(request):
 
     return HttpResponse(likes)
 
+
 def blog(request):
     context_dict = {}
 
     visits = request.session.get('visits')
     context_dict['visits'] = visits
     return render(request, 'moneykatz/blog.html', context_dict)
+
 
 def jresume(request):
     context_dict = {}
@@ -114,7 +118,7 @@ def add_file(request, category_name_slug):
 
 @login_required()
 def cat_list(request):
-    category_list = Category.objects.all()
+    category_list = Category.objects.order_by('-views')
     files_list = File.objects.order_by('-views')[:10]
     context_dict = {'categories': category_list,
                     'files': files_list,
@@ -141,6 +145,7 @@ def add_category(request):
         form = CategoryForm()
 
     return render(request, 'moneykatz/add_category.html', {'form': form})
+
 
 @login_required
 def category(request, category_name_slug):
