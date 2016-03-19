@@ -22,4 +22,4 @@ $(document).ready(function() {
     });
 });
 
-$('.landing').css('height',$(window).height());
+$('.content-container').css('min-height',$(window).height());

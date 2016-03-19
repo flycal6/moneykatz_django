@@ -5,6 +5,7 @@
 {% block title %}Landing Page{% endblock %}
 
 {% block more_head %}
+
     <style>
         .container {
             width: 100%;
@@ -12,9 +13,43 @@
         }
         .landing {
             background-image: url({% static 'images/space.jpg' %});
-            padding:0;
-            margin:0;
+            background-size: cover;
+            padding: 0;
+            margin: 0px 0 -20px 0;
         }
+        .content-container > .row {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .top-row {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .top-row h1 {
+            font-size: 300%;
+        }
+        .light-text {
+            color: #f5f5f5;
+        }
+        .marginTop {
+            margin-top: 30px;
+        }
+        .gallery-img {
+             max-height: 256px;
+        }
+        .blue {
+            background-color: #f5f5f5;
+        }
+        .marginBottom {
+            margin-bottom: 30px;
+        }
+        .paddingTop {
+            padding-top: 100px;
+            text-align: center;
+        }
+
     </style>
 {% endblock %}
 
@@ -22,8 +57,69 @@
 
 {% block maindiv %}
     {% block body_block %}
-        <div class="landing">
-        Hello
+
+        <div class="landing content-container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 top-row">
+                    <h1 class="light-text">Moneykatz</h1>
+                    <p class="lead">Web Design. <span class="text-muted"> Coding.</span></p>
+                    <p class="text-muted">Contact me for all your world domination needs.  Also contact me about
+                    creating a webapp for you.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <div class="row top-row">
+                <h1>Welcome</h1>
+                <p class="lead">Summary of the Great Awesomeness</p>
+            </div>
+
+            <div class="row marginBottom">
+                <div class="col-md-4 marginTop">
+                    <h2><i class="fa fa-rocket"></i> Hire Us</h2>
+                    <p>Use the links you find and have a look around.  Maybe even hire us.  Hire my wife too.
+                        She's probably the best teacher you've ever seen. She thinks that last line sounds sarcastic.
+                        It's not, she's really good.
+                    </p>
+
+                   <a href="{% url 'contact' %}"><button class="btn btn-success marginTop">Hire Us!</button></a>
+                </div>
+
+                <div class="col-md-4 marginTop">
+                    <h2> <i class="fa fa-picture-o"></i> Sample Gallery</h2>
+                    <p>Some graphic design samples.  Have a look at an image gallery website.  You'll find a few samples
+                        of graphic design work.</p>
+
+                    <img class="featurette-image img-responsive center-block gallery-img" src="{% static 'galleryimages/kuwait.png' %}"
+                     alt="Gallery Logo"></a>
+
+                   <a href="{% url 'gallery' %}"><button class="btn btn-success marginTop">Image Gallery</button></a>
+                </div>
+
+                <div class="col-md-4 marginTop">
+                    <h2><i class="fa fa-code"></i> Coding</h2>
+                    <p>I write the backend as well as the front.  Check out this maintenance
+                    ticketing system.  An html page is generated on the fly, confirming your request.  It also sends the
+                    ticket to the maintenance department, and you get an email back, confirming delivery.</p>
+
+                   <a href="{% url 'fixit' %}"><button class="btn btn-success marginTop">Sample Site</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container blue">
+            <div class="row paddingTop">
+                <h1>Download a Free App</h1>
+                <p class="lead">Shooter Tutor</p>
+                <p>A simple alien shooting game that teaches multiplication and division</p>
+                <a href="https://play.google.com/store/apps/details?id=appinventor.ai_BrianRayThomas.Game&utm_source=android.downloadatoz.com"
+                    target="_blank">
+                    <img src="{% static 'images/googleplay.svg' %}" class="marginTop">
+                </a>
+
+            </div>
+
         </div>
 
 

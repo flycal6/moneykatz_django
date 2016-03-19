@@ -16,7 +16,7 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    background-color: #f5f5f5;
+    background-color: rgba(248,248,248,0.7); /* changed from #f5f5f5 to add an alpha value */
     z-index: 3;
 }
 
@@ -84,11 +84,6 @@ body > .container {
     padding-right: 15px;
     padding-left: 15px;
 }
-
-/*code {*/
-    /*font-size: 80%;*/
-/*}*/
-
 
 /* add_category.html CSS
 -------------------------------------------------- */

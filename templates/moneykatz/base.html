@@ -52,7 +52,10 @@
     <style>
         a {
             color: darkgreen;
-
+        }
+        .navbar-fixed-top {
+            background-color: rgba(248,248,248,0.7);
+            border: none;
         }
     </style>
     {% block more_head %}{% endblock %} {# use to add additional head tags #}
@@ -147,13 +150,14 @@
     </div>
 </div>
 
+{% block footer %}
 <footer class="panel-footer">
     <p class="pull-right">Powered by
     <a href="https://www.djangoproject.com/" target="_blank">
         <img src="{% static 'images/django.png' %}" alt="Django logo" /></a></p>
     <p>&copy; 2016 Brian Thomas</p>
 </footer>
-
+{% endblock footer %}
 <!-- Bootstrap core JavaScript and jQuery
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
