@@ -12,10 +12,6 @@ from moneykatz.models import Category, File
 from django.core.mail import send_mail, BadHeaderError
 
 
-def landing(request):
-    context_dict = {}
-    return render(request, 'moneykatz/landing.html', context_dict)
-
 def for_sale(request):
     context_dict = {}
     return render(request, 'moneykatz/forsale.html', context_dict)
@@ -216,3 +212,36 @@ def about(request):
     context_dict = {'aboutmessage': 'This is a context dict variable', 'visits': visits}
 
     return render(request, 'moneykatz/about.html', context_dict)
+
+
+def index_old(request):
+    category_list = Category.objects.all()
+    files_list = File.objects.order_by('-views')[:5]
+    context_dict = {'categories': category_list,
+                    'files': files_list,
+                    'boldmessage': 'I am a bold message from the context dict',
+                    }
+
+    visits = request.session.get('visits')
+    if not visits:
+        visits = 1
+    reset_last_visit_time = False
+
+    last_visit = request.session.get('last_visit')
+    if last_visit:
+        last_visit_time = datetime.strptime(last_visit[: -7], "%Y-%m-%d %H:%M:%S")
+
+        if (datetime.now() - last_visit_time).seconds > 7200:
+            visits += 1
+            reset_last_visit_time = True
+
+    else:
+        reset_last_visit_time = True
+
+    if reset_last_visit_time:
+        request.session['last_visit'] = str(datetime.now())
+        request.session['visits'] = visits
+    context_dict['visits'] = 'Visits: ' + str(visits)
+
+    response = render(request, 'moneykatz/index_old.html', context_dict)
+    return response

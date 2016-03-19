@@ -4,6 +4,7 @@ from moneykatz import views
 urlpatterns = patterns(
     '',
     url(r'^$', views.index, name='index'),
+    url(r'^index-old/$', views.index_old, name='index_old'),
     url(r'^about/$', views.about, name='about'),
     url(r'^add_category/$', views.add_category, name='add_category'),
     url(r'^file-server/$', views.cat_list, name='cat_list'),
@@ -18,5 +19,4 @@ urlpatterns = patterns(
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^thanks/$', views.thanks, name='thanks'),
     url(r'^for-sale/$', views.for_sale, name='for-sale'),
-    url(r'^landing/$', views.landing, name='landing'),
 )
