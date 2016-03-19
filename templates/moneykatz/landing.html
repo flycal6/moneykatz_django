@@ -1,0 +1,26 @@
+{% extends 'moneykatz/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}For Sale Items{% endblock %}
+
+{% block sidediv %}
+
+{% endblock %}
+
+{% block maindiv %}
+{% block body_block %}
+    <style>
+        .landing {
+            background-image: url({% static 'images/space.jpg' %});
+            padding:0;
+            margin:0;
+        }
+    </style>
+    <div class="landing">
+    Hello
+    </div>
+
+
+{% endblock %}
+{% endblock maindiv %}

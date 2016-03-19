@@ -21,3 +21,5 @@ $(document).ready(function() {
         $('i.addfile').toggleClass('fa-cloud-upload fa-spinner fa-pulse');
     });
 });
+
+$('.landing').css('height',$(window).height());

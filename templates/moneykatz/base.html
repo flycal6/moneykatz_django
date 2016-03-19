@@ -102,15 +102,21 @@
 <!-- Begin page content -->
 <div class="container">
     <div class="row">
+
+        {% block sidediv %} {# override this in a template to remove entirely #}
         <div class="col-sm-3 col-md-2 sidebar">
+
             {% block side_block %}
+
                 <img class="featurette-image img-responsive center-block sidebar-image"
                      src="{% static 'images/moneykatz-logo.svg' %}" alt="Coding and Web Design Logo">
                 {% get_category_list category %}
 
             {% endblock %}
         </div>
+        {% endblock sidediv %}
 
+        {% block maindiv %} {# override this in a template to remove entirely #}
         <div class="col-sm-9 col-sm-offset-3 col-md-10 main col-md-offset-2">
 
             {% block body_block %}Default body content{% endblock %}
@@ -132,11 +138,11 @@
                     <li><p>{{ visits }}</p></li>
                 </ul>
             </div>
-
-    <hr />
-    <br />
-    <br />
+        <br />
+        <br />
+        <br />
         </div>
+        {% endblock maindiv %}
     </div>
 </div>
 
