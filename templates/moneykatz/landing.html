@@ -2,25 +2,30 @@
 
 {% load staticfiles %}
 
-{% block title %}For Sale Items{% endblock %}
+{% block title %}Landing Page{% endblock %}
 
-{% block sidediv %}
-
-{% endblock %}
-
-{% block maindiv %}
-{% block body_block %}
+{% block more_head %}
     <style>
+        .container {
+            width: 100%;
+            height:100%;
+        }
         .landing {
             background-image: url({% static 'images/space.jpg' %});
             padding:0;
             margin:0;
         }
     </style>
-    <div class="landing">
-    Hello
-    </div>
-
-
 {% endblock %}
+
+{% block sidediv %}{% endblock %}
+
+{% block maindiv %}
+    {% block body_block %}
+        <div class="landing">
+        Hello
+        </div>
+
+
+    {% endblock body_block %}
 {% endblock maindiv %}
