@@ -135,3 +135,12 @@ EMAIL_PORT = port
 
 ADMINS = (admin1, admin2, admin3)
 SERVER_EMAIL = admin1
+
+# Dirty, slow hack to allow for easy dev and prod settings.
+try:
+    LOCAL_SETTINGS
+except NameError:
+    try:
+        from local_settings import *
+    except ImportError:
+        pass
