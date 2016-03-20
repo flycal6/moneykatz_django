@@ -23,7 +23,7 @@ SECRET_KEY = secret_key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['moneykatz.com', 'www.moneykatz.com', 'www.drycountrybrewing.com', 'drycountrybrewing.com']
 
@@ -136,7 +136,8 @@ EMAIL_PORT = port
 ADMINS = (admin1, admin2, admin3)
 SERVER_EMAIL = admin1
 
-# Dirty, slow hack to allow for easy dev and prod settings.
+# If not found, nothing happens, settings here are used
+# If import occurs, settings.py is overridden/extended
 try:
     LOCAL_SETTINGS
 except NameError:
