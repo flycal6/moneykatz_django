@@ -50,6 +50,12 @@
             padding-top: 100px;
             text-align: center;
         }
+        .number {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
 
     </style>
 {% endblock %}
@@ -80,8 +86,8 @@
 
             <div class="row marginBottom">
                 <div class="col-md-4 marginTop">
-                    <h2><i class="fa fa-anchor"></i> Boat Pic</h2>
-                    <p>Sweet boat stuff and a pic of docking for coffee.
+                    <h2><i class="fa fa-anchor"></i> Boat Coffee</h2>
+                    <p>Cruising for coffee on a Saturday morning.
                     </p>
                     <img class="featurette-image img-responsive center-block gallery-img"
                          src="{% static 'images/forsale/coffeeboat.JPG' %}"
@@ -89,8 +95,8 @@
                 </div>
 
                 <div class="col-md-4 marginTop">
-                    <h2> <img src="{% static 'images/forsale/transport.svg' %}" height="44px" /> Boat Pic2</h2>
-                    <p>More sweet boat stuff and maybe a pic of the boat.
+                    <h2> <img src="{% static 'images/forsale/transport.svg' %}" height="44px" /> Boat Views</h2>
+                    <p>Even Mahboula looks kinda nice from the water.
                     </p>
 
                     <img class="featurette-image img-responsive center-block gallery-img"
@@ -99,14 +105,18 @@
                 </div>
 
                 <div class="col-md-4 marginTop">
-                    <h2><img src="{% static 'images/forsale/silhouette.svg' %}" height="38px" /> Boat Pic3</h2>
-                    <p>Even sweeter boat stuff and a wakeboarding pic.
+                    <h2><img src="{% static 'images/forsale/silhouette.svg' %}" height="38px" /> Boat Sports</h2>
+                    <p>Wakeboarding setup included.
                     </p>
                     <img class="featurette-image img-responsive center-block gallery-img"
                          src="{% static 'images/forsale/IMG_4222.JPG' %}"
                      alt="Docking for coffee">
                 </div>
             </div>
+            <div class="row clearfix">
+                    <p class="lead number">Shoot me a text at <a href="tel:+965 5523 6942">5523 6942</a> or
+                        <a href="{% url 'contact' %}"> <strong>email me</strong></a> if you're interested </p>
+                </div>
         </div>
 
         <div class="content-container blue">
@@ -120,6 +130,7 @@
                 </a>
             </div>
         </div>
+
 
     <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
         <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by
