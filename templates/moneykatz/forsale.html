@@ -75,38 +75,34 @@
         <div class="content-container">
             <div class="row top-row">
                 <h1>Welcome</h1>
-                <p class="lead">Summary of the Great Awesomeness</p>
+                <p class="lead">To the Great Awesomeness of Boat Life</p>
             </div>
 
             <div class="row marginBottom">
                 <div class="col-md-4 marginTop">
-                    <h2><i class="fa fa-rocket"></i> Hire Us</h2>
+                    <h2><i class="fa fa-anchor"></i> Boat Pic</h2>
                     <p>Use the links you find and have a look around.  Maybe even hire us.  Hire my wife too.
                         She's probably the best teacher you've ever seen. She thinks that last line sounds sarcastic.
                         It's not, she's really good.
                     </p>
-
-                   <a href="{% url 'contact' %}"><button class="btn btn-success marginTop">Hire Us!</button></a>
                 </div>
 
                 <div class="col-md-4 marginTop">
-                    <h2> <i class="fa fa-picture-o"></i> Sample Gallery</h2>
+                    <h2> <img src="{% static 'images/forsale/transport.svg' %}" height="44px" /> Boat Pic2</h2>
                     <p>Some graphic design samples.  Have a look at an image gallery website.  You'll find a few samples
-                        of graphic design work.</p>
+                        of graphic design work.
+                    </p>
 
                     <img class="featurette-image img-responsive center-block gallery-img" src="{% static 'galleryimages/kuwait.png' %}"
                      alt="Gallery Logo">
-
-                   <a href="{% url 'gallery' %}"><button class="btn btn-success marginTop">Image Gallery</button></a>
                 </div>
 
                 <div class="col-md-4 marginTop">
-                    <h2><i class="fa fa-code"></i> Coding</h2>
+                    <h2><img src="{% static 'images/forsale/silhouette.svg' %}" height="38px" /> Boat Pic3</h2>
                     <p>I write the backend as well as the front.  Check out this maintenance
-                    ticketing system.  An html page is generated on the fly, confirming your request.  It also sends the
-                    ticket to the maintenance department, and you get an email back, confirming delivery.</p>
-
-                   <a href="{% url 'fixit' %}"><button class="btn btn-success marginTop">Sample Site</button></a>
+                        ticketing system.  An html page is generated on the fly, confirming your request.  It also sends the
+                        ticket to the maintenance department, and you get an email back, confirming delivery.
+                    </p>
                 </div>
             </div>
         </div>
@@ -124,6 +120,9 @@
             </div>
 
         </div>
-
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+    <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by
+    <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+</div>
     {% endblock body_block %}
 {% endblock maindiv %}
