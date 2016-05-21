@@ -1,0 +1,140 @@
+{% extends 'moneykatz/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Overpriced Junk{% endblock %}
+
+{% block more_head %}
+
+    <style>
+{#    .container is used to override existing css from base.html #}
+        .container {
+            width: 100%;
+            height:100%;
+        }
+        .landing {
+            background: center url({% static 'images/forsale/boat_launch.JPG' %});
+            background-size: cover;
+            padding: 0;
+            margin: 0 0 0 0;
+        }
+        .content-container > .row {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .top-row {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .top-row h1 {
+            font-size: 300%;
+        }
+        .light-text {
+            color: #f5f5f5;
+        }
+        .marginTop {
+            margin-top: 30px;
+        }
+        .gallery-img {
+             max-height: 256px;
+        }
+        .blue {
+            background-color: #f5f5f5;
+        }
+        .marginBottom {
+            margin-bottom: 30px;
+        }
+        .paddingTop {
+            padding-top: 100px;
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+    </style>
+{% endblock %}
+
+{% block sidediv %}{% endblock %}
+
+{% block maindiv %}
+    {% block body_block %}
+
+    {#     TODO  bar, still, boat, recliner, beanbag, dartboard, bocci ball, camelbak #}
+    {#      TODO Make a default user/password to share #}
+
+        <div class="landing content-container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 top-row">
+                    <h1 class="light-text">Boat</h1>
+                    <p class="lead">Privacy. <span class="text-muted"> Outdoors.</span></p>
+                    <p class="lead smaller text-muted">You can have years of personal floating freedom.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <div class="row top-row">
+                <h1>Welcome</h1>
+                <p class="lead">To the Great Awesomeness of Boat Life</p>
+            </div>
+
+            <div class="row marginBottom">
+                <div class="col-md-4 marginTop">
+                    <h2><i class="fa fa-anchor"></i> Boat Coffee</h2>
+                    <p>Cruising for coffee on a Saturday morning.
+                    </p>
+                    <img class="featurette-image img-responsive center-block gallery-img"
+                         src="{% static 'images/forsale/coffeeboat.JPG' %}"
+                     alt="Docking for coffee">
+                </div>
+
+                <div class="col-md-4 marginTop">
+                    <h2> <img src="{% static 'images/forsale/transport.svg' %}" height="44px" /> Boat Views</h2>
+                    <p>Even Mahboula looks kinda nice from the water.
+                    </p>
+
+                    <img class="featurette-image img-responsive center-block gallery-img"
+                         src="{% static 'images/forsale/water.jpg' %}"
+                     alt="Docking for coffee">
+                </div>
+
+                <div class="col-md-4 marginTop">
+                    <h2><img src="{% static 'images/forsale/silhouette.svg' %}" height="38px" /> Boat Sports</h2>
+                    <p>Wakeboarding setup included.
+                    </p>
+                    <img class="featurette-image img-responsive center-block gallery-img"
+                         src="{% static 'images/forsale/IMG_4222.JPG' %}"
+                     alt="Docking for coffee">
+                </div>
+            </div>
+            <div class="row clearfix">
+                    <p class="lead number">Shoot me a text at <a href="tel:+965 5523 6942">5523 6942</a> or
+                        <a href="{% url 'contact' %}"> <strong>email me</strong></a> if you're interested </p>
+                </div>
+        </div>
+
+        <div class="content-container blue">
+            <div class="row paddingTop">
+                <h1>Download a Free App</h1>
+                <p class="lead">Shooter Tutor</p>
+                <p>A simple alien shooting game that teaches multiplication and division</p>
+                <a href="https://play.google.com/store/apps/details?id=appinventor.ai_BrianRayThomas.Game&utm_source=android.downloadatoz.com"
+                    target="_blank">
+                    <img src="{% static 'images/googleplay.svg' %}" class="marginTop">
+                </a>
+            </div>
+        </div>
+
+
+    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+        <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by
+        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+    </div>
+    {% endblock body_block %}
+{% endblock maindiv %}
