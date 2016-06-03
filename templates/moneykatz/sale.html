@@ -16,9 +16,6 @@
 {% block maindiv %}
     {% block body_block %}
 
-    {#     TODO  bar, still, boat, recliner, beanbag, dartboard, bocci ball, camelbak #}
-    {#      TODO Make a default user/password to share #}
-
         <div class="landing content-container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 top-row">
@@ -38,30 +35,96 @@
             <div class="row marginBottom">
                 <div class="col-md-4 marginTop">
                     <h2><img src="{% static 'images/forsale/slingshot.svg' %}" height="44px" /> Wrist Rocket</h2>
-                    <p>Your kid will love this.  5kd
-                    </p>
                     <img class="featurette-image img-responsive center-block gallery-img"
-                         src="{% static 'images/forsale/wrist-rocket.jpg' %}"
-                     alt="Docking for coffee">
+                         src="{% static 'images/forsale/wrist-rocket.jpg' %}" alt="Slingshot">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-info gallery-button" data-toggle="modal" data-target="#rocketModal">
+                      View Info
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="rocketModal" tabindex="-1" role="dialog" aria-labelledby="rocketModalLabel">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="rocketModalLabel">
+                                <span class="pull-right" style="margin: 0 10px 0 0"> 5kd</span>Shoot for the Stars</h4>
+                          </div>
+                          <div class="modal-body">
+                            <img class="featurette-image img-responsive center-block"
+                             src="{% static 'images/forsale/wrist-rocket.jpg' %}" alt="Slingshot">
+                              <p> Or the street lights.  I don't judge.</p>
+                              <p>Water soluble paintballs are good, cheap ammo which you can get from Ace.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="col-md-4 marginTop">
-                    <h2> <img src="{% static 'images/forsale/shooting.svg' %}" height="44px" /> Winchester 1100S</h2>
-                    <p>Shoot the lights out with 1100 fps pellets.  25kd
-                    </p>
+                    <h2> <img src="{% static 'images/forsale/shooting.svg' %}" height="44px" /> Winchester</h2>
 
                     <img class="featurette-image img-responsive center-block gallery-img"
-                         src="{% static 'images/forsale/rifle.jpg' %}"
-                     alt="Docking for coffee">
+                         src="{% static 'images/forsale/rifle.jpg' %}" alt="Pellet Rifle">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-info gallery-button" data-toggle="modal" data-target="#rifleModal">
+                      View Info
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="rifleModal" tabindex="-1" role="dialog" aria-labelledby="rifleModalLabel">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="rifleModalLabel">
+                                <span class="pull-right" style="margin: 0 10px 0 0"> 20kd</span>Someone Shot Dan Summers' Hat</h4>
+                          </div>
+                          <div class="modal-body">
+                            <img class="featurette-image img-responsive center-block"
+                                 src="{% static 'images/forsale/rifle.jpg' %}" alt="Pellet Rifle">
+                              <p>Shoot the lights out with 1100 fps pellets and a high power scope.  Ask Dan Summers to
+                              model shooting a rifle.</p><p>Orginally 50kd from Ace Hardware</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="col-md-4 marginTop">
                     <h2><img src="{% static 'images/forsale/bocci.svg' %}" height="44px" /> Bocci</h2>
-                    <p>Leisure sports for life. 3kd
-                    </p>
+
                     <img class="featurette-image img-responsive center-block gallery-img"
-                         src="{% static 'images/forsale/bocci.jpg' %}"
-                     alt="Docking for coffee">
+                         src="{% static 'images/forsale/bocci.jpg' %}" alt="Bocci">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-info gallery-button" data-toggle="modal" data-target="#bocciModal">
+                      View Info
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="bocciModal" tabindex="-1" role="dialog" aria-labelledby="bocciModalLabel">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="bocciModalLabel">
+                                <span class="pull-right" style="margin: 0 10px 0 0">3kd</span>Bocci: True Leisure Sport</h4>
+                          </div>
+                          <div class="modal-body">
+                            <img class="featurette-image img-responsive center-block"
+                                 src="{% static 'images/forsale/bocci.jpg' %}" alt="Bocci">
+                              <p>Leisure sports for life.  Originally $40 back in California.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
 
@@ -70,30 +133,95 @@
             <div class="row marginBottom">
                 <div class="col-md-4 marginTop">
                     <h2><img src="{% static 'images/forsale/macbook.svg' %}" height="44px" /></i> Macbook</h2>
-                    <p>4Gb, 320Gb, New Bat, power cable not included.  20kd
-                    </p>
+
                     <img class="featurette-image img-responsive center-block gallery-img"
-                         src="{% static 'images/forsale/macbook.jpg' %}"
-                     alt="Docking for coffee">
+                         src="{% static 'images/forsale/macbook.jpg' %}" alt="Docking for coffee">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-info gallery-button" data-toggle="modal" data-target="#macbookModal">
+                      View Info
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="macbookModal" tabindex="-1" role="dialog" aria-labelledby="macbookModalLabel">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="macbookModalLabel">
+                                <span class="pull-right" style="margin: 0 10px 0 0">20kd</span>MacBook</h4>
+                          </div>
+                          <div class="modal-body">
+                            <img class="featurette-image img-responsive center-block"
+                         src="{% static 'images/forsale/macbook.jpg' %}" alt="macbook">
+                              <p>4Gb, 320Gb, New Bat, power cable not included.  20kd</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="col-md-4 marginTop">
                     <h2> <img src="{% static 'images/forsale/autobots.svg' %}" height="44px" /> Transformer</h2>
-                    <p>Get juiced.  2kd
-                    </p>
 
                     <img class="featurette-image img-responsive center-block gallery-img"
-                         src="{% static 'images/forsale/transformer.jpg' %}"
-                     alt="Docking for coffee">
+                         src="{% static 'images/forsale/transformer.jpg' %}" alt="transformer">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-info gallery-button" data-toggle="modal" data-target="#transformerModal">
+                      View Info
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="transformerModal" tabindex="-1" role="dialog" aria-labelledby="transformerModalLabel">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="transformerModalLabel">
+                                <span class="pull-right" style="margin: 0 10px 0 0">2kd</span>Step-Up/Step-Down Transformer</h4>
+                          </div>
+                          <div class="modal-body">
+                            <img class="featurette-image img-responsive center-block"
+                         src="{% static 'images/forsale/transformer.jpg' %}" alt="transformer">
+                              <p>It's got a fuse in the back to stop you from frying your electronics.  Get juiced.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="col-md-4 marginTop">
                     <h2><img src="{% static 'images/forsale/camels-race.svg' %}" height="44px" /> Camelbak</h2>
-                    <p>1.5 L reservoir.  5kd
-                    </p>
+
                     <img class="featurette-image img-responsive center-block gallery-img"
-                         src="{% static 'images/forsale/camelbak.jpg' %}"
-                     alt="Docking for coffee">
+                         src="{% static 'images/forsale/camelbak.jpg' %}" alt="Camelbak">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-info gallery-button" data-toggle="modal" data-target="#cbModal">
+                      View Info
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="cbModal" tabindex="-1" role="dialog" aria-labelledby="cbModalLabel">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="cbModalLabel">
+                                <span class="pull-right" style="margin: 0 10px 0 0">3kd</span>CamelBak</h4>
+                          </div>
+                          <div class="modal-body">
+                            <img class="featurette-image img-responsive center-block"
+                         src="{% static 'images/forsale/camelbak.jpg' %}" alt="Camelbak">
+                              <p>1.5L reservoir.  Lots of little pockets.  No-Drip nipple that I definitely cleaned recently.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
             <div class="row clearfix">
