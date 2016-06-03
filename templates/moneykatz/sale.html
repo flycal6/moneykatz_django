@@ -129,11 +129,14 @@
             </div>
 
             <div class="marginBottom">
-                <div class="col-sm-6 col-md-4 marginTop">
+                <div class="col-sm-6 col-md-4 marginTop" style="position: relative">
                     <h2><img src="{% static 'images/forsale/macbook.svg' %}" height="44px" /></i> Macbook</h2>
 
+                    <img class="featurette-image img-responsive center-block top-image"
+                         src="{% static 'images/forsale/soldout.svg' %}">
                     <img class="featurette-image img-responsive center-block gallery-img"
-                         src="{% static 'images/forsale/macbook.jpg' %}" alt="Docking for coffee">
+                         src="{% static 'images/forsale/macbook.jpg' %}" alt="macbook">
+
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-info gallery-button" data-toggle="modal" data-target="#macbookModal">
