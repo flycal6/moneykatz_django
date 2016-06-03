@@ -3,13 +3,12 @@
         width: 100%;
         height:100%;
     }
-    /* This css in <style> in sale.html due to {% static %} tag */
-    /*.landing {*/
-        /*background: center url({% static 'images/forsale/shopping.jpg' %});*/
-        /*background-size: cover;*/
-        /*padding: 0;*/
-        /*margin: 0 0 0 0;*/
-    /*}*/
+    .landing {
+        background: center url('../images/forsale/shopping.jpg');
+        background-size: cover;
+        padding: 0;
+        margin: 0 0 0 0;
+    }
     .content-container > .row {
         padding-left: 0;
         padding-right: 0;
