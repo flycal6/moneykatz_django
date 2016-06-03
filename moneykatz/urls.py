@@ -19,5 +19,5 @@ urlpatterns = patterns(
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^thanks/$', views.thanks, name='thanks'),
     url(r'^for-sale/$', views.for_sale, name='for-sale'),
-    url(r'^overpriced-junk/$', views.sale, name='sale'),
+    url(r'^definitely-not-junk/$', views.sale, name='sale'),
 )
