@@ -16,6 +16,7 @@ def sale(request):
     context_dict = {}
     return render(request, 'moneykatz/sale.html', context_dict)
 
+
 def for_sale(request):
     context_dict = {}
     return render(request, 'moneykatz/forsale.html', context_dict)

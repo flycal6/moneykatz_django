@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from registration.backends.simple.views import RegistrationView
 from filebrowser.sites import site
 from moneykatz import views
+from unity import views
 
 
 class MyRegistrationView(RegistrationView):
@@ -18,6 +19,7 @@ urlpatterns = patterns('',
 
                        url(r'^admin/filebrowser/', include(site.urls)),
                        url(r'^admin/', include(admin.site.urls)),
+                       url(r'^unity/', include('unity.urls')),
                        url(r'^moneykatz/', include('moneykatz.urls')),
                        url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
                        url(r'^accounts/', include('registration.backends.simple.urls')),
