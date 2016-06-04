@@ -2,6 +2,8 @@
 
 {% load staticfiles %}
 
+{% block maindiv %}
+
 {% block body_block %}
 
     <style>
@@ -11,11 +13,13 @@
             z-index: 20;
         }
         .text-right.text-muted{
-            margin-bottom: 0px;
+            margin-bottom: 0;
             margin-top: 3px;
         }
 
     </style>
+
+    {% block sidediv %}{% endblock %}
 
     <div class="container-fluid">
     <div class="row">
@@ -173,4 +177,6 @@
     </div>
 </div>
 
-{% endblock %}
+{% endblock body_block%}
+
+{% endblock maindiv%}
