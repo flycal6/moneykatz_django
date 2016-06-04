@@ -2,6 +2,10 @@
 
 {% load staticfiles %}
 
+{% block sidediv %}{% endblock %}
+
+{% block maindiv %}
+
 {% block body_block %}
 
     <style>
@@ -230,4 +234,6 @@
     </div>
 </div>
 
-{% endblock %}
+{% endblock body_block%}
+
+{% endblock maindiv%}
