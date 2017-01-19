@@ -145,3 +145,7 @@ except NameError:
         from local_settings import *
     except ImportError:
         pass
+
+# for certbot/ssl
+STATIC_ENCRYPT_URL = '/.well-known/'
+STATIC_ENCRYPT_ROOT = '/var/www/XXXXX/website/static/'

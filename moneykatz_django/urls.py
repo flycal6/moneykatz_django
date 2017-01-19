@@ -25,6 +25,9 @@ urlpatterns = patterns('',
                        url(r'^accounts/', include('registration.backends.simple.urls')),
                        url(r'^', include('moneykatz.urls')),
                        )
+# for certbot
+urlpatterns += static(settings.STATIC_ENCRYPT_URL, document_root=settings.STATIC_ENCRYPT_ROOT)
+
 if settings.DEBUG:
     urlpatterns += patterns(
         'django.views.static',
@@ -35,3 +38,4 @@ if settings.DEBUG:
 
 if not settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
