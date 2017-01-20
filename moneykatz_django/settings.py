@@ -52,6 +52,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+# HTTPS
+os.environ['wsgi.url_scheme'] = 'https'
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 # Set daily cron job of python manage.py clearsessions
 SESSION_COOKIE_AGE = 1209600
 
@@ -93,7 +98,7 @@ LOGIN_URL = '/accounts/login/'
 
 STATIC_ROOT = '/home/flycal6/webapps/static/'
 
-STATIC_URL = 'http://moneykatz.com/static/'
+STATIC_URL = 'https://moneykatz.com/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -106,7 +111,7 @@ TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS = (TEMPLATE_PATH,
                  )
 
-MEDIA_URL = 'http://moneykatz.com/media/'
+MEDIA_URL = 'https://moneykatz.com/media/'
 
 MEDIA_ROOT = '/home/flycal6/webapps/media/'
 
@@ -145,7 +150,3 @@ except NameError:
         from local_settings import *
     except ImportError:
         pass
-
-# for certbot/ssl
-STATIC_ENCRYPT_URL = '/.well-known/'
-STATIC_ENCRYPT_ROOT = '/var/www/XXXXX/website/static/'
