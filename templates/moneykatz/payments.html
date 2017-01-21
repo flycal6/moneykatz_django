@@ -1,0 +1,26 @@
+{% extends 'moneykatz/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body_block %}
+    <script async src="https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js"></script>
+    <div
+            data-ap-widget-type="expressPaymentButton"
+            data-ap-signature="4ySrRA3XxUQaj7kiVMaXrVl4zv4fQUGF1aKtbl3B88I%3D"
+            data-ap-seller-id="ADH95F240R8U"
+            data-ap-access-key="AKIAJIS7GVCM5CYWPP5Q"
+            data-ap-lwa-client-id="amzn1.application-oa2-client.f48e3819febe43cb874cac3e079cb302"
+            data-ap-return-url="https://moneykatz.com"
+            data-ap-cancel-return-url="https://moneykatz.com/about"
+            data-ap-currency-code="USD"
+            data-ap-amount="100"
+            data-ap-note=""
+            data-ap-shipping-address-required="false"
+            data-ap-payment-action="Authorize"
+    >
+    </div>
+
+
+{% endblock %}

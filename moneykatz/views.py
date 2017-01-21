@@ -11,6 +11,10 @@ from moneykatz.models import Category, File
 
 from django.core.mail import send_mail, BadHeaderError
 
+def payments(request):
+    context_dict = {}
+    return render(request, 'moneykatz/payments.html', context_dict)
+
 
 def sale(request):
     context_dict = {}

@@ -20,4 +20,5 @@ urlpatterns = patterns(
     url(r'^thanks/$', views.thanks, name='thanks'),
     url(r'^for-sale/$', views.for_sale, name='for-sale'),
     url(r'^definitely-not-junk/$', views.sale, name='sale'),
+    url(r'^payments/$', views.payments, name='payments'),
 )
