@@ -11,6 +11,11 @@ from moneykatz.models import Category, File
 
 from django.core.mail import send_mail, BadHeaderError
 
+def success(request):
+    context_dict = {}
+    return render(request, 'moneykatz/success.html', context_dict)
+
+
 def cancelled(request):
     context_dict = {}
     return render(request, 'moneykatz/cancelled.html', context_dict)

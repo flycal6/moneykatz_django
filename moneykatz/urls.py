@@ -23,4 +23,5 @@ urlpatterns = patterns(
     url(r'^payments/$', views.payments, name='payments'),
     url(r'^privacy/$', views.privacy, name='privacy'),
     url(r'^cancelled/$', views.cancelled, name='cancelled'),
+    url(r'^success/$', views.success, name='success'),
 )
