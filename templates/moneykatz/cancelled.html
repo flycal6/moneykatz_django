@@ -1,0 +1,13 @@
+{% extends 'moneykatz/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Payment Cancelled{% endblock %}
+
+{% block body_block %}
+
+    <h2>Payment Cancelled</h2>
+
+    <p>Your payment was not processed.  If this was an error, please return to <a href="{% url 'payments' %}" class="btn btn-success marginTop">Payments</a>.</p>
+
+{% endblock %}

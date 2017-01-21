@@ -2,9 +2,11 @@
 
 {% load staticfiles %}
 
-{% block title %}Blog{% endblock %}
+{% block title %}Payments{% endblock %}
 
 {% block body_block %}
+    <h2>Payments</h2>
+    <p>Pay $100 with the button below.</p>
     <script async src="https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js"></script>
     <div
             data-ap-widget-type="expressPaymentButton"
@@ -12,8 +14,8 @@
             data-ap-seller-id="ADH95F240R8U"
             data-ap-access-key="AKIAJIS7GVCM5CYWPP5Q"
             data-ap-lwa-client-id="amzn1.application-oa2-client.f48e3819febe43cb874cac3e079cb302"
-            data-ap-return-url="https://moneykatz.com"
-            data-ap-cancel-return-url="https://moneykatz.com/about"
+            data-ap-return-url="https://moneykatz.com/success"
+            data-ap-cancel-return-url="https://moneykatz.com/cancelled"
             data-ap-currency-code="USD"
             data-ap-amount="100"
             data-ap-note=""

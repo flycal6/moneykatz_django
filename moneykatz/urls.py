@@ -21,4 +21,6 @@ urlpatterns = patterns(
     url(r'^for-sale/$', views.for_sale, name='for-sale'),
     url(r'^definitely-not-junk/$', views.sale, name='sale'),
     url(r'^payments/$', views.payments, name='payments'),
+    url(r'^privacy/$', views.privacy, name='privacy'),
+    url(r'^cancelled/$', views.cancelled, name='cancelled'),
 )
