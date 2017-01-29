@@ -1,5 +1,5 @@
 from datetime import datetime
-from secrets import website_email
+from secrets import website_email, merchant_id, access_key_id, secret_access_key, client_id, client_secret
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
@@ -10,6 +10,7 @@ from moneykatz.forms import CategoryForm, FileForm, ContactForm
 from moneykatz.models import Category, File
 
 from django.core.mail import send_mail, BadHeaderError
+
 
 def success(request):
     context_dict = {}
@@ -27,7 +28,13 @@ def privacy(request):
 
 
 def payments(request):
-    context_dict = {}
+    context_dict = {'merchant_id': merchant_id,
+                    'client_secret': client_secret,
+                    'access_key_id': access_key_id,
+                    'secret_access_key': secret_access_key,
+                    'client_id': client_id,
+                    'test_var': 'context dict working',
+                    }
     return render(request, 'moneykatz/payments.html', context_dict)
 
 

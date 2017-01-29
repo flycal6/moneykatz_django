@@ -7,45 +7,53 @@
 {% block body_block %}
     <h2>Payments</h2>
 
-    <p>Pay $5 with the button below.</p>
+{#    <p>{{ test_var }}</p>#}
+    <p>Pay with the button below.</p>
 
-{#    Sandbox payment button#}
-{% comment %}    <script async src="https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js"></script>
-    <div
-            data-ap-widget-type="expressPaymentButton"
-            data-ap-signature="zyu%2FcJIZWMjrGr0blBhDOd67TS2UKKB4cJcyh5%2BNZ4c%3D"
-            data-ap-seller-id="ADH95F240R8U"
-            data-ap-access-key="AKIAJIS7GVCM5CYWPP5Q"
-            data-ap-lwa-client-id="amzn1.application-oa2-client.f48e3819febe43cb874cac3e079cb302"
-            data-ap-return-url="https://moneykatz.com/success"
-            data-ap-cancel-return-url="https://moneykatz.com/cancelled"
-            data-ap-currency-code="USD"
-            data-ap-amount="5"
-            data-ap-note="You are a good guy, thanks."
-            data-ap-shipping-address-required="false"
-            data-ap-payment-action="Authorize"
-    >
-    </div>{% endcomment %}
-
-{#    Production payment button#}
-    <div
-    data-ap-widget-type="expressPaymentButton"
-    data-ap-signature="bSYAnWzaA3xttLdElqCt9w8u4hm%2B1kS8gUp2mhKu6V0%3D"
-    data-ap-seller-id="ADH95F240R8U"
-    data-ap-access-key="AKIAJIS7GVCM5CYWPP5Q"
-    data-ap-lwa-client-id="amzn1.application-oa2-client.f48e3819febe43cb874cac3e079cb302"
-    data-ap-return-url="https://www.moneykatz.com/success"
-    data-ap-cancel-return-url="https://www.moneykatz.com/cancelled"
-    data-ap-currency-code="USD"
-    data-ap-amount="5.00"
-    data-ap-note="You are a good guy, thanks."
-    data-ap-shipping-address-required="false"
-    data-ap-payment-action="AuthorizeAndCapture"
-    >
-    </div>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="ACF3QGR257Z3Q">
+        <table>
+            <tr><td><input type="hidden" name="on0" value="Prices">Prices</td></tr><tr><td><select name="os0">
+            <option value="A coffee">A coffee $5.00 USD</option>
+            <option value="Nateeubanks.com 1 year">Nateeubanks.com 1 year $100.00 USD</option>
+            <option value="Feeling Generous">Feeling Generous $1,000.00 USD</option>
+        </select> </td></tr>
+        </table>
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
 
 
+    {% comment %}    <div id="AmazonPayButton"/>
+    <script type="text/javascript">
+        OffAmazonPayments.Button("AmazonPayButton", {{ merchant_id }}, {
+            type: "hostedPayment",
 
+            hostedParametersProvider: function(done){
+                args = {
+                    amount: $("paymentAmount").val(),
+                    currencyCode: $("amountCurrencyCode").val(),
+                    sellerNote: $("noteToBuyer").val()
+                }
+                // Call the back end to combine button args with
+                // other seller config param values and sign it.
+                $.getJSON("/generateRequestSignature",
+                    args,
+                    function(data) {
+                        done (data)
+                    })
+            },
+            onError: function(errorCode) {
+                // your error handling code
+            }
+        });
+    </script>{% endcomment %}
 
-    <script async src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>
+{# Sandbox javascript - comment the script out when moving to production #}
+{#    <script async type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'></script>#}
+
+    {# Production javascript - uncomment this script out when moving to production #}
+{#    <script async type='text/javascript' src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>#}
 {% endblock %}
