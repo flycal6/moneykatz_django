@@ -24,4 +24,5 @@ urlpatterns = patterns(
     url(r'^privacy/$', views.privacy, name='privacy'),
     url(r'^cancelled/$', views.cancelled, name='cancelled'),
     url(r'^success/$', views.success, name='success'),
+    url(r'^valentines-day/$', views.valentines, name='valentines'),
 )
