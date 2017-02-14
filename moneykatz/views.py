@@ -14,7 +14,7 @@ from django.core.mail import send_mail, BadHeaderError
 
 def valentines(request):
     context_dict = {}
-    return render(request, 'moneykatz/valentines_day.html', context_dict)
+    return render(request, 'moneykatz/valentines.html', context_dict)
 
 
 def success(request):
